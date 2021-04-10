@@ -4,10 +4,10 @@ window = pyglet.window.Window()
 
 #coordenadas iniciais da reta
 p1 = [10, 10]
-p2 = [100, 100]
+p2 = [50, 250]
 
 x = p1[0]
-y = p2[1]
+y = p1[1]
 m = (p2[1]-p1[1]) / (p2[0]-p1[0])
 b = p2[1] - m * p2[0]
 

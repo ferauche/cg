@@ -4,7 +4,6 @@ import pyglet
 p1 = [int(i) for i in input("Entre com as coordenadas de P1 x y: ").split()]
 p2 = [int(i) for i in input("Entre com as coordenadas de P2 x y: ").split()]
 
-
 dx = p2[0] - p1[0]
 dy = p2[1] - p1[1]
 
@@ -39,6 +38,7 @@ window = pyglet.window.Window()
 @window.event
 def on_draw():
     global reta
-    pyglet.graphics.draw(int(len(reta)/2),pyglet.gl.GL_POINTS,('v2i',reta))
+    pyglet.graphics.draw(int(len(reta)/2),pyglet.gl.GL_POINTS,('v2i', reta))
+
 
 pyglet.app.run()
