@@ -7,14 +7,13 @@ p2 = [int(i) for i in input("Entre com as coordenadas de um ponto da circunferê
 
 raio = math.sqrt(((p1[0]-p2[0])**2) + ((p1[1]-p2[1])**2))
 
-delta_pi = math.pi / 360
-
 circ = []
-t = 0
 count = 0
-while (t <= (math.pi/4) ):
-    x = round(raio*math.cos(t))
-    y = round(raio*math.sin(t))
+
+x = 0
+y = round(raio)
+
+while y >= 0:
     circ.append(p1[0] + x)
     circ.append(p1[1] + y)
     circ.append(p1[0] + x)
@@ -33,7 +32,29 @@ while (t <= (math.pi/4) ):
     circ.append(p1[1] - y)
     circ.append(p1[0] - x)
 
-    t += delta_pi
+    delta_i = (x+1)**2 + (y-1)**2 - raio ** 2
+    md = abs(delta_i)
+
+    if delta_i < 0:
+        mh = abs((x+1)**2 + (y-1)**2 - raio**2)
+        sigma = mh - md
+        if sigma <= 0:
+            x += 1
+        else:
+            x += 1
+            y -= 1
+    elif delta_i > 0:
+        mv = abs((x**2) + (y-1)**2 - raio**2)
+        sigma = mv - md
+        if sigma >= 0:
+            x += 1
+            y -= 1
+        else:
+            y -= 1
+    else:
+        x += 1
+        y -= 1
+
     count += 1
 
 print(circ)
