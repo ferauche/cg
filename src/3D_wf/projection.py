@@ -1,7 +1,6 @@
 import pyglet
 import wired
 
-
 class ProjectViewer(object):
     def __init__(self, obj3d : wired.WireFrame):
         self.wf = obj3d
