@@ -27,8 +27,14 @@ class ProjectViewer(object):
 
                 x2 = edge.stop.x
                 y2 = edge.stop.z
+            elif self.visao == "lateral":
+                x1 = edge.start.z
+                y1 = edge.start.y
 
-            self.vertex.append(self.batch.add(2, pyglet.gl.GL_LINES, None, ('v2i', (x1, y1, x2, y2))))
+                x2 = edge.start.z
+                y2 = edge.start.y
+
+            self.vertex.append(self.batch.add(2, pyglet.gl.GL_LINES, None, ('v2i', (int(x1), int(y1), int(x2), int(y2)))))
 
 
 

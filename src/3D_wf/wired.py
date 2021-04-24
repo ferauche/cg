@@ -29,3 +29,31 @@ class WireFrame(object):
             node.y += ty
             node.z += tz
 
+    def escalar(self, fe):
+        pm = self.center()
+
+        for node in self.nodes:
+            xref = node.x - pm[0]
+            yref = node.y - pm[1]
+            zref = node.z - pm[2]
+
+            node.x = xref * fe
+            node.y = yref * fe
+            node.z = zref * fe
+
+            node.x += pm[0]
+            node.y += pm[1]
+            node.z += pm[2]
+
+    def center(self):
+        mx = 0
+        my = 0
+        mz = 0
+        for node in self.nodes:
+            mx += node.x
+            my += node.y
+            mz += node.z
+
+        return [mx / len(self.nodes), my / len(self.nodes), my / len(self.nodes)]
+
+

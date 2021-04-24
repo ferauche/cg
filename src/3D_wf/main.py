@@ -28,10 +28,24 @@ window = pyglet.window.Window()
 def on_key_press(symbol, modifiers):
     if symbol == pyglet.window.key.RIGHT:
         piramide.transladar(10, 0, 0)
+    elif symbol == pyglet.window.key.LEFT:
+        piramide.transladar(-10, 0, 0)
+    elif symbol == pyglet.window.key.UP:
+        piramide.transladar(0, 10, 0)
+    elif symbol == pyglet.window.key.DOWN:
+        piramide.transladar(0, -10, 0)
+    elif symbol == pyglet.window.key.W:
+        piramide.transladar(0, 0, 10)
+    elif symbol == pyglet.window.key.Q:
+        piramide.transladar(0, 0, -10)
     elif symbol == pyglet.window.key.F:
         pv.visao = "frontal"
     elif symbol == pyglet.window.key.S:
         pv.visao = "superior"
+    elif symbol == pyglet.window.key.L:
+        pv.visao = "lateral"
+    elif symbol == pyglet.window.key.E:
+        piramide.escalar(1.1)
 
     pv.display()
 
