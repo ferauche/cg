@@ -10,24 +10,24 @@ dy = p2[1] - p1[1]
 reta = []
 
 if dx == 0:
-    for y in range(p1[1], p2[1]):
+    for y in range(p1[1], p2[1]+1):
         reta.append(p1[0])
         reta.append(y)
 elif dy == 0:
-    for x in range(p1[0], p2[0]):
+    for x in range(p1[0], p2[0]+1):
         reta.append(x)
         reta.append(p1[1])
 elif dx > dy:
     inc = dy / dx
     y = p1[1]
-    for x in range(p1[0], p2[0]):
+    for x in range(p1[0], p2[0]+1):
         reta.append(x)
         reta.append(round(y))
         y = y+inc
 else:
     inc = dx / dy
     x = p1[0]
-    for y in range(p1[1], p2[1]):
+    for y in range(p1[1], p2[1]+1):
         reta.append(round(x))
         reta.append(y)
         x = x+inc
