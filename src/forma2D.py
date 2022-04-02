@@ -79,7 +79,7 @@ def on_key_press(symbol, modifiers):
             y *= 1.5
 
             x += xref
-            y += xref
+            y += yref
 
             forma_t.append((int(x), int(y)))
         forma = forma_t
@@ -104,7 +104,7 @@ def on_key_press(symbol, modifiers):
             yr = x * math.sin(rad) + y * math.cos(rad)
 
             xr += xref
-            yr += xref
+            yr += yref
 
             forma_t.append((int(xr), int(yr)))
 
