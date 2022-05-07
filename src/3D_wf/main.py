@@ -32,17 +32,21 @@ def on_key_press(symbol, modifiers):
         piramide.transladar(-10, 0, 0)
     elif symbol == pyglet.window.key.UP:
         piramide.transladar(0, 10, 0)
+        pv.fep[1] += 0.1
     elif symbol == pyglet.window.key.DOWN:
         piramide.transladar(0, -10, 0)
+        pv.fep[1] -= 0.1
     elif symbol == pyglet.window.key.W:
         piramide.transladar(0, 0, 10)
+        pv.fep[0] += 0.1
     elif symbol == pyglet.window.key.Q:
         piramide.transladar(0, 0, -10)
+        pv.fep[0] -= 0.1
     elif symbol == pyglet.window.key.F:
         pv.visao = "frontal"
     elif symbol == pyglet.window.key.S:
         pv.visao = "superior"
-    elif symbol == pyglet.window.key.L:
+    elif symbol == pyglet.window.key.P:
         pv.visao = "lateral"
     elif symbol == pyglet.window.key.E:
         piramide.escalar(1.1)

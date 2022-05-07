@@ -56,4 +56,7 @@ class WireFrame(object):
 
         return [mx / len(self.nodes), my / len(self.nodes), my / len(self.nodes)]
 
+    def show_nodes(self):
+        for node in self.nodes:
+            print("("+str(node.x)+", "+str(node.y)+", "+str(node.z)+")");
 
