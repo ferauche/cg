@@ -1,3 +1,5 @@
+import math
+
 import pyglet
 import wired
 import projection
@@ -28,8 +30,10 @@ window = pyglet.window.Window()
 def on_key_press(symbol, modifiers):
     if symbol == pyglet.window.key.RIGHT:
         piramide.transladar(10, 0, 0)
+        pv.fep[2] += 0.1
     elif symbol == pyglet.window.key.LEFT:
         piramide.transladar(-10, 0, 0)
+        pv.fep[2] -= 0.1
     elif symbol == pyglet.window.key.UP:
         piramide.transladar(0, 10, 0)
         pv.fep[1] += 0.1
@@ -46,10 +50,16 @@ def on_key_press(symbol, modifiers):
         pv.visao = "frontal"
     elif symbol == pyglet.window.key.S:
         pv.visao = "superior"
-    elif symbol == pyglet.window.key.P:
+    elif symbol == pyglet.window.key.L:
         pv.visao = "lateral"
     elif symbol == pyglet.window.key.E:
         piramide.escalar(1.1)
+    elif symbol == pyglet.window.key.X:
+        piramide.rotacionar('x', 10*(math.pi/180))
+    elif symbol == pyglet.window.key.Y:
+        piramide.rotacionar('y', 10*(math.pi/180))
+    elif symbol == pyglet.window.key.Z:
+        piramide.rotacionar('z', 10*(math.pi/180))
 
     pv.display()
 
